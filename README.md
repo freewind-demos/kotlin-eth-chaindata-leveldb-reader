@@ -1,8 +1,6 @@
-Kotlin LevelDB Reader
-=====================
+Kotlin Ethereum Chaindata LevelDB Reader
+========================================
 
-Read data from a leveldb.
+Read blockchain data of Ethereum, which is stored in levelDB.
 
 Run `Hello.kt` in your IDE.
-
-More to see <https://github.com/fusesource/leveldbjni>

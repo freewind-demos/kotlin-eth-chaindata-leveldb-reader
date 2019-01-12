@@ -1,10 +1,11 @@
 package example
 
+import org.apache.commons.codec.binary.Hex
 import org.fusesource.leveldbjni.JniDBFactory.factory
 import org.iq80.leveldb.Options
 import java.io.File
 
-private val db = factory.open(File("./data/example.db"), Options())!!
+private val db = factory.open(File("./Ethereum/geth/chaindata"), Options())!!
 
 fun main(args: Array<String>) {
 
@@ -15,8 +16,8 @@ fun main(args: Array<String>) {
 
         while (iterator.hasNext()) {
             val next = iterator.peekNext()
-            val key = String(next.key!!)
-            val value = String(next.value!!)
+            val key = String(Hex.encodeHex(next.key!!))
+            val value = String(Hex.encodeHex(next.value!!))
             println("$key = $value")
             iterator.next()
         }
